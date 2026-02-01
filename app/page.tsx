@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import JSZip from 'jszip'
 import { ImageDropzone } from '../components/ImageDropzone'
 import { SlidesGallery } from '../components/SlidesGallery'
 import { StyleControls } from '../components/StyleControls'
@@ -31,6 +32,11 @@ const triggerDownload = (dataUrl: string, filename: string) => {
   document.body.append(link)
   link.click()
   link.remove()
+}
+
+const dataUrlToBase64 = (dataUrl: string): string => {
+  const comma = dataUrl.indexOf(',')
+  return comma >= 0 ? dataUrl.slice(comma + 1) : dataUrl
 }
 
 type HomePageProps = {
@@ -162,12 +168,18 @@ export default function HomePage(props: HomePageProps) {
     try {
       setIsExporting(true)
       setExportHint('Готовим серию к скачиванию...')
+      const zip = new JSZip()
       for (const [index, slide] of slides.entries()) {
         const text = slideTexts[slide.id] ?? ''
         const dataUrl = await renderer.exportSlide(slide, text, 0.98)
-        triggerDownload(dataUrl, `slide_${String(index + 1).padStart(2, '0')}.jpg`)
+        const base64 = dataUrlToBase64(dataUrl)
+        zip.file(`slide_${String(index + 1).padStart(2, '0')}.jpg`, base64, { base64: true })
       }
-      setExportHint('Все слайды сохранены')
+      const blob = await zip.generateAsync({ type: 'blob' })
+      const url = URL.createObjectURL(blob)
+      triggerDownload(url, 'carousel.zip')
+      URL.revokeObjectURL(url)
+      setExportHint('Все слайды сохранены в carousel.zip')
     } catch (error) {
       setExportHint(error instanceof Error ? error.message : 'Не удалось экспортировать карусель')
     } finally {

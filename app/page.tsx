@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ImageDropzone } from '../components/ImageDropzone'
 import { SlidesGallery } from '../components/SlidesGallery'
 import { StyleControls } from '../components/StyleControls'
@@ -33,7 +33,13 @@ const triggerDownload = (dataUrl: string, filename: string) => {
   link.remove()
 }
 
-export default function HomePage() {
+type HomePageProps = {
+  params?: Promise<Record<string, string | string[]>>
+}
+
+export default function HomePage(props: HomePageProps) {
+  // Next 15: params асинхронный — разворачиваем через use(), иначе dev overlay при перечислении props выдаёт ошибку
+  React.use(props.params ?? Promise.resolve({}))
   const [slides, setSlides] = useState<SlideSource[]>([])
   const [activeSlideId, setActiveSlideId] = useState<string | undefined>()
   const [slideTexts, setSlideTexts] = useState<Record<string, string>>({})

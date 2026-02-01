@@ -19,4 +19,4 @@ Next.js 15, React 19, TypeScript, Tailwind. Рендер текста на canva
 
 ## Репозиторий
 
-[https://github.com/shinigamiyo/-Insta--](https://github.com/shinigamiyo/-Insta--)
+[https://github.com/shinigamiyo/insta-carousel-generator](https://github.com/shinigamiyo/insta-carousel-generator)

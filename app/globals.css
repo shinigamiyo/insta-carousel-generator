@@ -317,8 +317,14 @@
   --font-lcd: "JetBrains Mono", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Monaco, monospace;
 }
 
+html {
+  min-height: 100%;
+  background-color: #030124;
+}
+
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
   background-color: #030124;
   background-image: 

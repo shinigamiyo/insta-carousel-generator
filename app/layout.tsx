@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={jetbrainsMono.variable}>
-      <body className="bg-midnight-900 font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   )
 }

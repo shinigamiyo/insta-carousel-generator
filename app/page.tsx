@@ -191,7 +191,6 @@ export default function HomePage(props: HomePageProps) {
     <main className="relative min-h-screen bg-[#020224]">
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
         <div className="pointer-events-none absolute inset-0 bg-neon-grid opacity-70" />
-        <div className="pointer-events-none absolute top-[40%] left-1/2 h-96 w-[180%] -translate-x-1/2 bg-gradient-to-b from-transparent via-transparent to-[#020224] transition-opacity duration-300 md:hidden" />
       </div>
       <div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-4 pt-12 sm:gap-10 sm:px-6 pb-16 lg:px-10">
         <header className="space-y-4 sm:space-y-6">

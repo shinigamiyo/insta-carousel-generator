@@ -1,0 +1,5 @@
+# Формат: <type>[scope]: <описание на русском>
+# Типы: feat, fix, docs, style, refactor, perf, test, build, ci, chore
+# Пример: feat(canvas): добавить экспорт в PNG
+#
+# Заголовок (до 72 символов, императив, без точки):

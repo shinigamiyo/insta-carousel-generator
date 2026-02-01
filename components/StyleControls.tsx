@@ -14,6 +14,7 @@ const fontOptions = [
   { value: 'Lora', label: 'Lora' },
   { value: 'DM Sans', label: 'DM Sans' },
   { value: 'Oswald', label: 'Oswald' },
+  { value: 'JetBrains Mono', label: 'JetBrains Mono' },
 ]
 
 const textAlignOptions: Array<{ value: CanvasTextAlign; label: string }> = [

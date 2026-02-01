@@ -22,6 +22,7 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        lcd: ["var(--font-lcd)", "ui-monospace", "monospace"],
       },
       boxShadow: {
         glow: '0 0 40px rgba(138, 92, 246, 0.25)',

@@ -15,6 +15,7 @@ const FONT_FALLBACKS: Record<string, string> = {
   'Lora': '"Lora", serif',
   'DM Sans': '"DM Sans", sans-serif',
   'Oswald': '"Oswald", sans-serif',
+  'JetBrains Mono': '"JetBrains Mono", ui-monospace, monospace',
 }
 
 const getCanvasFontFamily = (family: string) => FONT_FALLBACKS[family] ?? `"${family}"`

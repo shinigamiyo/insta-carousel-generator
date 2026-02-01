@@ -255,7 +255,7 @@ export default function HomePage(props: HomePageProps) {
               onSelect={setActiveSlideId}
               onRemove={handleRemoveSlide}
               onReorder={handleReorderSlides}
-              className="grid-cols-2 sm:grid-cols-3 max-h-40 overflow-y-auto"
+              className="grid-cols-2 sm:grid-cols-3"
             />
           </section>
 

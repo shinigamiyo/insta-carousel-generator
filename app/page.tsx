@@ -195,9 +195,23 @@ export default function HomePage(props: HomePageProps) {
       </div>
       <div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-4 pt-12 sm:gap-10 sm:px-6 pb-16 lg:px-10">
         <header className="space-y-4 sm:space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#5E55F0]/40 bg-[#5E55F0]/15 px-3 py-1 text-[11px] uppercase tracking-[0.32em] text-[#8FA7FF]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#EB9EFF] shadow-glow" />
-            BOLSHAKOV_AI
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#5E55F0]/40 bg-[#5E55F0]/15 px-3 py-1 text-[11px] uppercase tracking-[0.32em] text-[#8FA7FF]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#EB9EFF] shadow-glow" />
+              BOLSHAKOV_AI
+            </div>
+            <a
+              href="https://t.me/bolshakov_vibecoding"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Автор приложения — Telegram @bolshakov_vibecoding"
+              className="inline-flex items-center gap-2 rounded-full border border-[#0088CC]/50 bg-[#0088CC]/15 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-[#5AC8FA] transition hover:border-[#0088CC]/70 hover:bg-[#0088CC]/25 hover:text-[#7DD3FC]"
+            >
+              <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.015 3.333-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.141.121.1.154.234.17.332.015.098.034.321.019.495z" />
+              </svg>
+              Автор приложения
+            </a>
           </div>
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="space-y-2">

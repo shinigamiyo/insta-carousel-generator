@@ -55,9 +55,17 @@ export default function HomePage(props: HomePageProps) {
     slidesCacheRef.current = slides
   }, [slides])
 
+  // Отзываем blob URL только при размонтировании страницы. Не отзываем при изменении
+  // slides (добавление/перестановка), иначе те же URL ещё используются в галерее и превью.
   useEffect(() => {
     return () => {
-      slidesCacheRef.current.forEach((slide) => URL.revokeObjectURL(slide.url))
+      slidesCacheRef.current.forEach((slide) => {
+        try {
+          URL.revokeObjectURL(slide.url)
+        } catch {
+          // URL уже отозван (например, при удалении слайда) — игнорируем
+        }
+      })
     }
   }, [])
 

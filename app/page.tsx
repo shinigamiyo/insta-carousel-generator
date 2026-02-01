@@ -53,10 +53,13 @@ export default function HomePage(props: HomePageProps) {
 
   useEffect(() => {
     slidesCacheRef.current = slides
-    return () => {
-      slides.forEach((slide) => URL.revokeObjectURL(slide.url))
-    }
   }, [slides])
+
+  useEffect(() => {
+    return () => {
+      slidesCacheRef.current.forEach((slide) => URL.revokeObjectURL(slide.url))
+    }
+  }, [])
 
   const handleAddSlides = useCallback((files: File[]) => {
     if (!files.length) return
